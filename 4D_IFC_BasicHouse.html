@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +9,7 @@
     .viewer { width: 100%; height: 600px; border: 1px solid #ccc; margin-bottom: 30px; }
   </style>
   <script src="https://unpkg.com/xeokit-sdk/dist/xeokit-sdk.min.js"></script>
+  <script src="https://xeokit.github.io/xeokit-sdk/examples/IFCViewerPlugin/IFCViewerPlugin.min.js"></script>
 </head>
 <body>
 
@@ -19,12 +19,11 @@
   <div id="viewer" class="viewer"></div>
 
   <script>
-    const viewer = new xeokit.Viewer({ canvasId: "viewer", transparent: true });
-
-    viewer.loadModel({
-      src: "https://raw.githubusercontent.com/ppwcr/ifc/main/BasicHouse.ifc",
-      edges: true
+    const viewer = new IFCViewerPlugin({
+      canvasId: "viewer"
     });
+
+    viewer.loadIFC("https://raw.githubusercontent.com/ppwcr/ifc/main/BasicHouse.ifc");
   </script>
 
   <p style="font-style: italic;">Model hosted on GitHub | Rendered via xeokit SDK</p>
