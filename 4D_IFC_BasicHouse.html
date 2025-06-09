@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4D IFC Viewer - BasicHouse</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1, h2 { color: #2c3e50; }
+    .viewer { width: 100%; height: 600px; border: 1px solid #ccc; margin-bottom: 30px; }
+  </style>
+  <script src="https://unpkg.com/xeokit-sdk/dist/xeokit-sdk.min.js"></script>
+</head>
+<body>
+
+  <h1>4D Construction Viewer</h1>
+  <h2>Model: BasicHouse.ifc</h2>
+
+  <div id="viewer" class="viewer"></div>
+
+  <script>
+    const viewer = new xeokit.Viewer({ canvasId: "viewer", transparent: true });
+
+    viewer.loadModel({
+      src: "https://raw.githubusercontent.com/ppwcr/ifc/main/BasicHouse.ifc",
+      edges: true
+    });
+  </script>
+
+  <p style="font-style: italic;">Model hosted on GitHub | Rendered via xeokit SDK</p>
+
+</body>
+</html>
